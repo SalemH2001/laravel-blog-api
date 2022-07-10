@@ -13,7 +13,10 @@ class Post extends Model
     {
         return 'slug';
     }
-   
+   public function user()
+   {
+    return $this->hasOne(User::class);
+   }
     public function categories()
     {
         return $this->belongsToMany(Category::class,'post_category','post_id','category_id');
